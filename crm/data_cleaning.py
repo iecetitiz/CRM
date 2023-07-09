@@ -58,10 +58,10 @@ rfm = rfm[rfm["monetary"] > 0]
 rfm["frequency_score"] = pd.qcut(rfm['frequency'], 5, labels=[1, 2, 3, 4, 5])
 
 
+a = [1, 2, 3, 4, 5]
 
 
-
-
+head_df = df
 
 
 
