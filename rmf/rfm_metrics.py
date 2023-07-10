@@ -15,6 +15,27 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x) #float degerlerin no
 df_ = pd.read_excel("C:/WorkSpace/PythonProjects/crm_analytics/files/online_retail_II.xlsx", sheet_name = "Year 2009-2010")
 df = df_.copy()
 
+df.dropna(inplace = True)
+
+
+smaller = df[df["Price"] < 0]
+numeric = df[df["Invoice"].astype(str).str.isnumeric()]
+
+
+
+negative_quantitiy = df[(df["Quantity"] < 0) & ~(df["Invoice"].str.contains("C", na = False))]
+negative_price = df[(df["Price"] < 0) & ~(df["Invoice"].str.contains("C", na = False))]
+
+
+
+negative_quantitiy = df[(df["Quantity"] < 0)]
+
+
+
+k = (df["Invoice"].astype(str).str.isnumeric())
+
+df.info()
+
 df["Invoice"].dtype
 df["Invoice"]
 df["Description"].dytpe
