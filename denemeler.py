@@ -13,7 +13,7 @@ import numpy as np
 # dictionary with list object in values
 details = {
     'Name' : ['Ankit', 'Aishwarya', 'Shaurya', 'Shivangi', "Ece", "Melis", "nihan"],
-    'Age' : [23, 21, 22, 21, 29, 20, 24],
+    'Age' : [23, 21,  np.NaN, 21, 29, 20, 24],
     'University' : ['BHU', 'JNU', 'DU', 'BHU', 'DE', 12345, np.NaN]
 }
   
@@ -21,5 +21,9 @@ details = {
 i_df = pd.DataFrame(details)
 
 
-i_df['Age'].str.contains("Z")
+#i_df['Age'].str.contains("Z")
   
+m = i_df.dropna()
+
+
+
